@@ -99,12 +99,6 @@ img:hover {
     font-size: 34px;
 }
 
-.button-sidebar:{
-    transform: rotate3d(1, 1, 1, 720deg);
-    transition: 4s;
-}
-.
-
 .note-add {
     font-size:30px;
     position: absolute;
@@ -112,12 +106,11 @@ img:hover {
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    /* padding: 15px; */
     border: none;
     left: 90%;
     bottom: 5%;
-    /* color: w5it */e;  
-x
+    color: white;  
+}
 
 .document{
     padding: 15px;
