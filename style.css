@@ -11,6 +11,10 @@ img:hover {
     transition: 4s;
 }
 
+button:focus {
+    outline: none;
+}
+
 .exithidden{
     position: absolute;
     background: none;
@@ -54,11 +58,12 @@ img:hover {
 
 #side-nav{
     display: flex;
-    position: fixed;
+    /*position: fixed;*/
+    float: left;
     flex-direction: column;
     justify-content: flex-start;
     margin: 0;
-    height: 100%;
+    height: 100vh;
     width: 83px;
     background-color: rgb(0, 83, 146);
 }
@@ -94,9 +99,14 @@ img:hover {
     background: none;
     border: none;
 }
+
 .button-sidebar:hover{
     color: rgb(255, 255, 255);
     font-size: 34px;
+}
+
+.button-sidebar:focus {
+    font-size: 38px;
 }
 
 .note-add {
@@ -112,6 +122,7 @@ img:hover {
     color: white;  
 }
 
+
 .document{
     padding: 15px;
     margin: auto;
@@ -126,3 +137,23 @@ img:hover {
         left: 20%;
     }
 }
+
+
+
+
+#editorContainer {
+    width: 100%;
+    margin: 0 auto auto;
+    float: left;
+}
+
+.demoBtn { /*(temp)*/
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#editorMsg {
+    font-style: italic;
+}
+
