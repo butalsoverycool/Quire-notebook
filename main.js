@@ -1,9 +1,10 @@
 let notes = [];
 let popup = document.querySelector(".popup");
+let visited = false;
 
 window.addEventListener('DOMContentLoaded', () => {
     //load();
-    if (notes === undefined || notes.length == 0) {
+    if (visited = false) {
         popup.classList.remove("hidden");
     }
 });
@@ -11,6 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("click", function (e){
     if(e.target.classList.contains("submit")){
         
+        let visited = true;
+
         let noteTitle = document.querySelector("#noteTitle").value;
         let noteText = document.querySelector("#noteText").value;
         
@@ -30,6 +33,7 @@ document.addEventListener("click", function (e){
 
 function save() {
     localStorage.setItem("notes", JSON.stringify(notes));
+    localStorage.setItem("visited", JSON.stringify(visited))
 }
 
 function load() {
