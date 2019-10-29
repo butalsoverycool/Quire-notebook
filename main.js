@@ -1,6 +1,6 @@
 let notes = [];
 let popup = document.querySelector(".popup");
-let visited = false;
+var visited = false;
 
 window.addEventListener('DOMContentLoaded', () => {
     
@@ -32,7 +32,7 @@ document.addEventListener("click", function (e){
     if (e.target.classList.contains("exit")){
         popup.classList.add("hidden");
     }
-});
+});     
 
 function firstTimeVisit(){
     //visited = true;
@@ -50,4 +50,6 @@ function load() {
     if (!notes) {
         notes = [];
     }
+    let visitedData = localStorage.getItem("visited")
+    let visited = JSON.parse(visitedData);
 }
