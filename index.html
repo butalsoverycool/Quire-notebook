@@ -7,6 +7,9 @@
     <title>Quire</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/d82255b79b.js" crossorigin="anonymous"></script>
+    
+    <!-- tiny mce -->
+    <script src="http:////cdn.tinymce.com/4/tinymce.min.js"></script>
 </head>
 <body>
     
@@ -35,14 +38,27 @@
         </div>
     </div>
     
-    <div class="document">
+    <!-- <div class="document">
         <textarea name="" id="" cols="60" rows="38"></textarea><br>
+    </div>-->
+    
+    <!-- Testversion av TinyMce-editorn -->
+    <div id="editorContainer" class="document">
+        <textarea id="noteEditor">Type some text here.</textarea>
+        
+        <button id="loadNote" class="demoBtn">Load saved note</button>
+        <button id="clearStorage" class="demoBtn">Clear Local Storage</button>
+        <p id="editorMsg"></p>
     </div>
     
-</div><button class="note-add">
+</div>
+<button class="note-add">
     <i class="fas fa-pen"></i>
 </button>
 <!--<script src="https://use.fontawesome.com/ec2599840b.js"></script>-->
 <script src="main.js"></script>
+    
+<!-- kimtest -->
+<script src="test/tinyMce.js"></script>
 </body>
 </html>

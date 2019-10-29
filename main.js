@@ -1,6 +1,19 @@
 let notes = [];
 let popup = document.querySelector(".popup");
+
 var visited = false;
+
+//visited is based on localstorage data (change later)
+visited = (() => {
+    const note = localStorage.getItem('note');
+    if(note !== '' && note != 'undefined' && note != null) {
+        console.log('Local storage contains a saved note.');
+        return true;
+    }else{
+        console.log('No notes exist in local storage.');
+        return false;
+    }
+})();
 
 window.addEventListener('DOMContentLoaded', () => {
     
@@ -14,6 +27,8 @@ window.addEventListener('DOMContentLoaded', () => {
     
 });
 
+// (we need to position this as low as possible in global scope)
+// (maybe move functional blocks to their on event-handler-functions? )
 document.addEventListener("click", function (e){
     if(e.target.classList.contains("submit")){
         
