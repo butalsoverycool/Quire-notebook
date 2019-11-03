@@ -1,64 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Quire</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/d82255b79b.js" crossorigin="anonymous"></script>
-    
-    <!-- tiny mce -->
+
+    <!-- Tiny Mce -->
     <script src="http:////cdn.tinymce.com/4/tinymce.min.js"></script>
 </head>
+
 <body>
-    
-<div class="popup hidden">
+
+    <div class="popup hidden">
         <button class="exithidden exit"> <span class="fa fa-times exit"></span> </button>
         <h1>Welcome!</h1>
         <p>
-         Quire is a new solution for easy, cross-platform notekeeping. 
+            Quire is a new solution for easy, cross-platform notekeeping.
             Free and easy to use, join today!
         </p>
-        <button id="closeWelcome" class="exit" >Continue</button>
-</div>
+        <button id="closeWelcome" class="exit">Continue</button>
+    </div>
 
-<div class="main-page">
-    <div id="side-nav">
-        <div id="side-nav-logo">
-            <img src="logo.png" alt="logo">
-            <!--<button class="logo-sidebar" id="search"><i class="fa fa-quora"></i></button>!-->
+    <div id="main-page" class="main-page">
+        <div id="side-subnav" data-open="false">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <div class="body">
+                <h3 class="title"></h3>
+                <div class="content"></div>
+            </div>
         </div>
 
-        <div id="side-nav-buttons">
-            <button class="button-sidebar" id="search"><i class="fa fa-search"></i></button>
-            <button class="button-sidebar" id="favorites"><i class="fa fa-star"></i></button>
-            <button class="button-sidebar" id="stats"><i class="fa fa-chart-bar"></i></button>
-            <button class="button-sidebar" id="settings"><i class="fas fa-cog"></i></button>
+        <div id="side-nav">
+            <div id="side-nav-logo">
+                <img src="media/logo.png" alt="logo">
+            </div>
+
+            <div id="side-nav-buttons">
+                <button class="button-sidebar" id="search" data-title="search"><i class="fa fa-search"></i></button>
+                <button class="button-sidebar" id="all_notes" data-title="all"><i
+                        class="fas fa-sticky-note"></i></button>
+                <button class="button-sidebar" id="favorites" data-title="favorites"><i class="fa fa-star"></i></button>
+                <button class="button-sidebar" id="stats" data-title="stats"><i class="fa fa-chart-bar"></i></button>
+                <button class="button-sidebar" id="settings" data-title="settings"><i class="fas fa-cog"></i></button>
+            </div>
         </div>
+
+        <!-- Editor -->
+        <div id="editorContainer" class="document">
+            <textarea id="noteEditor">Type some text here.</textarea>
+
+            <button id="clearStorage" class="demoBtn">Clear Local Storage</button>
+            <p id="editorMsg"></p>
+        </div>
+
     </div>
-    
-    <!-- <div class="document">
-        <textarea name="" id="" cols="60" rows="38"></textarea><br>
-    </div>-->
-    
-    <!-- Testversion av TinyMce-editorn -->
-    <div id="editorContainer" class="document">
-        <textarea id="noteEditor">Type some text here.</textarea>
-        
-        <button id="loadNote" class="demoBtn">Load saved note</button>
-        <button id="clearStorage" class="demoBtn">Clear Local Storage</button>
-        <p id="editorMsg"></p>
-    </div>
-    
-</div>
-<button class="note-add">
-    <i class="fas fa-pen"></i>
-</button>
-<!--<script src="https://use.fontawesome.com/ec2599840b.js"></script>-->
-<script src="main.js"></script>
-    
-<!-- kimtest -->
-<script src="test/tinyMce.js"></script>
+    <button class="note-add">
+        <i class="fas fa-pen"></i>
+    </button>
+
+    <!-- Local storage -->
+    <script src="js/localStorage.js"></script>
+
+    <!-- Notes -->
+    <script src="js/notes.js"></script>
+
+    <!-- Editor -->
+    <script src="js/editor.js"></script>
+
+    <!-- Interaction -->
+    <script src="js/interaction.js"></script>
+
+    <!-- User -->
+    <script src="js/user.js"></script>
+
+    <!-- Listener -->
+    <script src="js/listener.js"></script>
 </body>
+
 </html>

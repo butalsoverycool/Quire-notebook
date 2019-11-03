@@ -31,6 +31,7 @@ button:focus {
 }
 .popup{
     position: absolute;
+    z-index: 999;
     background-color: rgba(0, 50, 88, 0.712);
     top: 33%;
     left: 33%;
@@ -155,5 +156,80 @@ button:focus {
 
 #editorMsg {
     font-style: italic;
+}
+
+
+/*
+* Side menu content
+*********************/
+#side-subnav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+#side-subnav {
+    position: relative;
+    float: left;
+    height: 100vh;
+}
+
+#side-subnav > * {
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+#side-subnav .title {
+    font-size: 25px;
+    padding: 5px;
+}
+
+#side-subnav .title,
+#side-subnav .content {
+    width: inherit;
+}
+
+#side-subnav a:hover {
+    color: #f1f1f1;
+}
+
+#side-subnav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    #side-subnav {
+        padding-top: 15px;
+    }
+
+    #side-subnav > * {
+        font-size: 18px;
+    }
+}
+
+.noteList .item {
+    font-size: 20px;   
+    padding: 5px;
+    border:#0C0C0C solid 1px;
+    transition-duration: .3s;
+}
+
+.noteList .item:hover {
+    background: #005292;
+    color: white;
+    cursor: pointer;
 }
 
