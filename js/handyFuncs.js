@@ -11,3 +11,11 @@ const nthIndex = (str, sub, n) => {
     }
     return x;
 }
+
+// Print date string
+const printFullDate = () => {
+    const d = new Date();
+    const date = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate();
+    const time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+    return date + ' ' + time;
+}

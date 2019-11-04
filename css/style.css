@@ -265,4 +265,9 @@ div.mce-edit-area{
     display: block;
 }
 
+.note .meta {
+    font-size: 10px;
+    font-style: italic;
+}
+
 

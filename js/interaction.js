@@ -27,6 +27,10 @@ const subnavContent = (title) => {
                 `<li class="item note" data-id="${notes[x].id}" data-created="" data-lastUpdated="">
                 <h4 class="itemTitle">${notes[x].title}</h4>
                 <div class="itemContent">${notes[x].content}</div>
+                <div class="meta">
+                    <p class="lastUpdated">updated <span>${notes[x].lastUpdated}</span></p>
+                    <p class="created">created <span>${notes[x].created}</span></p>
+                </div>
             </li>`;
             htmlArr.push(content);
         }

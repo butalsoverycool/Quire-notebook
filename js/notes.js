@@ -1,6 +1,6 @@
 /*
 * NOTES
-********************/
+***********/
 
 // CLASS
 class Note {
@@ -8,11 +8,15 @@ class Note {
         this.title = title;
         this.content = content;
         this.id = Date.now();
-        this.lastUpdated = this.id;
+        this.created = printFullDate();
+        this.lastUpdated = printFullDate();
+
         // set global var active id to this
         activeId = this.id;
     }
 }
+
+
 
 // Load specific note
 const loadNote = (id, key = 'myNotes') => {
@@ -64,13 +68,15 @@ const saveNote = (asNew = false) => {
             title: title,
             content: tinymce.activeEditor.getContent(),
             id: activeId,
-            lastUpdated: Date.now()
+            created: printFullDate(),
+            lastUpdated: printFullDate()
         }
     }
 
     // If id exists in storage, overwrite orig with updated. 
     let orig = notes.find(item => item.id == activeId) || false;
     if (orig) {
+        updated.created = orig.created;
         notes.splice(notes.indexOf(orig), 1, updated);
     } else {
         // Otherwhise, add updated as new.
