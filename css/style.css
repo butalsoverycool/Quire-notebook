@@ -6,9 +6,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
-img:hover {
-    transform: rotate3d(1, 1, 1, 720deg);
+#quireLogo:hover {
+    transform: rotate3d(1, 1, 1, 720deg) scale(0.01);
     transition: 4s;
+    opacity: 10%;
 }
 
 button:focus {
@@ -39,7 +40,25 @@ button:focus {
     text-align: center;
     padding: 30px;
     color: white;
+    z-index: 3;
 }
+
+.blur img{
+    opacity: 0.7;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+div.mce-edit-area{
+    padding: 5% 22%;
+}
+
+
 
 #closeWelcome{
     margin-bottom: 5px;
@@ -69,8 +88,10 @@ button:focus {
     background-color: rgb(0, 83, 146);
 }
 
+
 .main-page{
     display: flex;
+    height: 200px;
 }
 
 #side-nav-buttons button{
@@ -123,6 +144,10 @@ button:focus {
     color: white;  
 }
 
+.favrotie-top{
+    
+}
+
 
 .document{
     padding: 15px;
@@ -131,16 +156,13 @@ button:focus {
 
 .document textarea{
     padding: 50px 80px;
-    
 }
+
 @media screen and (max-width: 800px) {
     .popup {
         left: 20%;
     }
 }
-
-
-
 
 #editorContainer {
     width: 100%;
@@ -169,7 +191,7 @@ button:focus {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: rgb(230, 230, 230);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -222,14 +244,25 @@ button:focus {
 
 .noteList .item {
     font-size: 20px;   
-    padding: 5px;
-    border:#0C0C0C solid 1px;
+    padding: 10px;
+    border:rgb(199, 199, 199) solid 1px;
     transition-duration: .3s;
 }
 
 .noteList .item:hover {
-    background: #005292;
+    background: #005392;
     color: white;
     cursor: pointer;
 }
+
+
+/* display part of note content in subnav */
+.itemContent > * {
+    display: none;
+}
+
+.itemContent > *:nth-child(2){
+    display: block;
+}
+
 

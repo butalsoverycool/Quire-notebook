@@ -8,6 +8,7 @@ class Note {
         this.title = title;
         this.content = content;
         this.id = Date.now();
+        this.lastUpdated = this.id;
         // set global var active id to this
         activeId = this.id;
     }
@@ -30,6 +31,18 @@ const loadNote = (id, key = 'myNotes') => {
     };
 }
 
+// Get note title
+const getTitle = () => {
+    // editor doc-html 
+    const doc = tinymce.activeEditor.getContent();
+
+    // return innerHTML of the first tag inside doc-<body>
+    // i.e. the note-title 
+    const start = (nthIndex(doc, '>', 6)) + 1;
+    const end = nthIndex(doc, '<', 7);
+    return doc.substring(start, end);
+}
+
 // Save currently edited note
 const saveNote = (asNew = false) => {
     // if !Local storage
@@ -43,13 +56,15 @@ const saveNote = (asNew = false) => {
 
     // create new note or use active id
     let updated;
+    let title = getTitle() || 'Untitled';
     if (asNew || !activeId) {
-        updated = new Note('Some title', tinymce.activeEditor.getContent());
+        updated = new Note(title, tinymce.activeEditor.getContent());
     } else {
         updated = {
-            title: 'Some title',
+            title: title,
             content: tinymce.activeEditor.getContent(),
-            id: activeId
+            id: activeId,
+            lastUpdated: Date.now()
         }
     }
 

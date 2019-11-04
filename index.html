@@ -15,8 +15,12 @@
 
 <body>
 
+    <div class="blur hidden">
+        <img src="media/solidblack.jpg" class="" alt="">
+    </div>
+
     <div class="popup hidden">
-        <button class="exithidden exit"> <span class="fa fa-times exit"></span> </button>
+        <button class="exithidden exit "> <span class="fa fa-times exit"></span> </button>
         <h1>Welcome!</h1>
         <p>
             Quire is a new solution for easy, cross-platform notekeeping.
@@ -26,17 +30,9 @@
     </div>
 
     <div id="main-page" class="main-page">
-        <div id="side-subnav" data-open="false">
-            <a href="javascript:void(0)" class="closebtn">&times;</a>
-            <div class="body">
-                <h3 class="title"></h3>
-                <div class="content"></div>
-            </div>
-        </div>
-
         <div id="side-nav">
             <div id="side-nav-logo">
-                <img src="media/logo.png" alt="logo">
+                <img id="quireLogo" src="media/logo.png" alt="logo">
             </div>
 
             <div id="side-nav-buttons">
@@ -48,9 +44,19 @@
                 <button class="button-sidebar" id="settings" data-title="settings"><i class="fas fa-cog"></i></button>
             </div>
         </div>
+        <div id="side-subnav" data-open="false">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <div class="body">
+                <h3 class="title"></h3>
+                <div class="content"></div>
+            </div>
+        </div>
 
         <!-- Editor -->
         <div id="editorContainer" class="document">
+            <input type="text" class="title">
+            <!-- <input type="checkbox" name="" id=""> -->
+            <i id="favorite-top" class="fa fa-star"></i>
             <textarea id="noteEditor">Type some text here.</textarea>
 
             <button id="clearStorage" class="demoBtn">Clear Local Storage</button>
@@ -58,9 +64,13 @@
         </div>
 
     </div>
-    <button class="note-add">
+
+    <!-- <button class="note-add">
         <i class="fas fa-pen"></i>
-    </button>
+    </button> -->
+
+    <!-- Handly functions -->
+    <script src="js/handyFuncs.js"></script>
 
     <!-- Local storage -->
     <script src="js/localStorage.js"></script>
