@@ -1,13 +1,13 @@
 // DOCUMENT CLICK-LISTENER
 
-let popup = document.querySelector(".popup");
-let blur = document.querySelector(".blur")
+const blur = document.querySelector(".blur");
+const popup = document.querySelector(".popup");
 
 document.addEventListener("click", function (e) {
     // close welcome popup?
     if (e.target.classList.contains("exit")) {
         popup.classList.add("hidden");
-        blur.classList.add("hidden")
+        blur.classList.add("hidden");
     }
 
     // nav?
@@ -25,15 +25,19 @@ document.addEventListener("click", function (e) {
         closeSubnav();
     }
 
-    // load note?
+    // load note? (make this smarter?)
     if (e.target.classList.contains('note') && e.target.dataset.id) {
+        loadNote(e.target.dataset.id);
     } else if (e.target.parentElement.classList.contains('note') && e.target.parentElement.dataset.id) {
         loadNote(e.target.parentElement.dataset.id);
+    } else if (e.target.parentElement.parentElement.classList.contains('note') && e.target.parentElement.parentElement.dataset.id) {
+        loadNote(e.target.parentElement.parentElement.dataset.id);
     }
 
     // clear storage? (dev func)
     if (e.target.id == 'clearStorage') {
-        tinymce.activeEditor.setContent(clearStorage());
+        clearStorage();
         displayMsg('Storage cleared!');
     }
+    console.log(e);
 });

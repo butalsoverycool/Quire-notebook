@@ -6,15 +6,62 @@
     font-family: 'Roboto', sans-serif;
 }
 
-#quireLogo:hover {
-    transform: rotate3d(1, 1, 1, 720deg) scale(0.01);
-    transition: 4s;
-    opacity: 10%;
+#quireLogo {
+    transition: 0.4s;
 }
 
-button:focus {
-    outline: none;
+#quireLogo:hover {
+    transform: scale(1.06);
+    opacity: 70%;
 }
+
+/* Top title / Favorite  */
+#title-and-favorites{
+    position: fixed;
+    top: 5px;
+    left: 80px;
+    z-index: 2;
+}
+
+#title-input{
+    border:1px solid rgba(153, 153, 153, 0.801);
+    border-radius: 2px;
+    padding: 3px;
+}
+
+#favorite-top-star{
+    
+}
+#favorite-top-star:hover{
+    color: rgb(55, 101, 255);
+    cursor: pointer;
+
+}
+
+/* pop up */
+
+.popup{
+    position: fixed;
+    background-color: rgba(0, 50, 88, 0.712);
+    top: 33%;
+    left: 33%;
+    width: 400px;
+    text-align: center;
+    padding: 30px;
+    color: white;
+    z-index: 7;
+}
+
+.blur img{
+    opacity: 0.7;
+    z-index: 6;
+    top: 0;
+    right: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
 
 .exithidden{
     position: absolute;
@@ -29,28 +76,6 @@ button:focus {
 }
 .exithidden:hover{
     color: gray;
-}
-.popup{
-    position: absolute;
-    z-index: 999;
-    background-color: rgba(0, 50, 88, 0.712);
-    top: 33%;
-    left: 33%;
-    width: 400px;
-    text-align: center;
-    padding: 30px;
-    color: white;
-    z-index: 3;
-}
-
-.blur img{
-    opacity: 0.7;
-    z-index: 2;
-    top: 0;
-    right: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%;
 }
 
 
@@ -76,7 +101,11 @@ div.mce-edit-area{
     display: none;
 }
 
-#side-nav{
+/* Side bar */
+
+#side-nav {
+    z-index: 3;
+    position: fixed;
     display: flex;
     /*position: fixed;*/
     float: left;
@@ -84,7 +113,7 @@ div.mce-edit-area{
     justify-content: flex-start;
     margin: 0;
     height: 100vh;
-    width: 83px;
+    width: 75px;
     background-color: rgb(0, 83, 146);
 }
 
@@ -105,7 +134,7 @@ div.mce-edit-area{
 }
 
 #side-nav-logo img{
-    width: 83px;
+    width: 75px;
 }
 
 .logo-sidebar{
@@ -115,20 +144,32 @@ div.mce-edit-area{
     border: none;
 }
 
+/* Buttons */
+
 .button-sidebar{
-    font-size: 30px;
+    font-size: 25px;
     color: white;
     background: none;
     border: none;
 }
 
 .button-sidebar:hover{
-    color: rgb(255, 255, 255);
-    font-size: 34px;
+    
+    font-size: 26px;
+    cursor: pointer;
 }
 
 .button-sidebar:focus {
-    font-size: 38px;
+    font-size: 30px;
+}
+
+button:focus {
+    outline: none;
+}
+
+#bottom-buttons{
+    margin-top: 10px;
+    margin-left: 28%;
 }
 
 .note-add {
@@ -168,6 +209,7 @@ div.mce-edit-area{
     width: 100%;
     margin: 0 auto auto;
     float: left;
+    padding-top: 0;
 }
 
 .demoBtn { /*(temp)*/
@@ -188,17 +230,18 @@ div.mce-edit-area{
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 4;
     top: 0;
     left: 0;
     background-color: rgb(230, 230, 230);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    transform: translateX(74px);
 }
 
 #side-subnav {
-    position: relative;
+    position: fixed;
     float: left;
     height: 100vh;
 }
@@ -256,4 +299,45 @@ div.mce-edit-area{
 }
 
 
+/* display part of note content in subnav */
+.itemContent > * {
+    display: none;
+}
 
+.itemContent > *:nth-child(2){
+    display: block;
+}
+
+.note .meta {
+    font-size: 10px;
+    font-style: italic;
+}
+
+/* Themes */
+
+.lightmodeTheme{
+
+}
+
+.darkModeTheme {
+    
+    background-color: rgb(49, 50, 59);
+    color: white;
+    
+}
+
+.nightModeTheme {
+    background-color: rgba(167, 83, 52, 0.863);
+    color: rgb(0, 0, 0);
+    
+}
+
+
+.mce-panel{
+    background: black;
+    border: none;
+}
+body.mceContentBody { 
+    background: #000 !important;  
+    color:#000 !important;
+ }
