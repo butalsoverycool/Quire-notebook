@@ -29,9 +29,6 @@
     padding: 3px;
 }
 
-#favorite-top-star{
-    
-}
 #favorite-top-star:hover{
     color: rgb(55, 101, 255);
     cursor: pointer;
@@ -212,11 +209,7 @@ button:focus {
     padding-top: 0;
 }
 
-.demoBtn { /*(temp)*/
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-}
+
 
 #editorMsg {
     font-style: italic;

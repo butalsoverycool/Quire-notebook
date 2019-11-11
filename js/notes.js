@@ -32,8 +32,6 @@ class Note {
     }
 }
 
-
-
 // Load specific note
 const loadNote = (id, key = 'myNotes') => {
     // if local storage is empty, display msg

@@ -22,9 +22,9 @@ document.addEventListener("click", function (e) {
 
 });
 
-function postInitWork()
+/*function postInitWork()
 {
   var editor = tinyMCE.getInstanceById('editorContainer');
   editor.getBody().style.backgroundColor = "#000";
-}
+}*/
 

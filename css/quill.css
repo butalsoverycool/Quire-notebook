@@ -6,7 +6,7 @@
 @import "~quill/dist/quill.core.css";
 
 #editor {
-    height: 800px;
+    height: 580px;
     margin-left: 75px;
     border-left: none;
     border-right: none;
