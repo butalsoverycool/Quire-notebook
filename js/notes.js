@@ -1,6 +1,6 @@
 /*
-* NOTES
-***********/
+ * NOTES
+ ***********/
 // data model local storage:
 /*
 quire: {
@@ -19,6 +19,7 @@ note = {
 }
 */
 // CLASS
+
 class Note {
     constructor(title, content) {
         this.title = title;
@@ -51,17 +52,17 @@ const loadNote = (id, key = 'myNotes') => {
 
 // Get note title
 const getTitle = () => {
-    
+
     const doc = document.getElementById("title-input").getContent;
     return doc;
-    /*// editor doc-html 
+    editor doc - html
     const doc = tinymce.activeEditor.getContent();
 
     // return innerHTML of the first tag inside doc-<body>
     // i.e. the note-title 
     const start = (nthIndex(doc, '>', 6)) + 1;
     const end = nthIndex(doc, '<', 7);
-    return doc.substring(start, end);*/
+    return doc.substring(start, end);
 }
 
 // Save currently edited note

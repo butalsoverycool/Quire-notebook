@@ -1,16 +1,8 @@
 /*
-* TINY MCE EDITOR
-*********************/
+ * TINY MCE EDITOR
+ *********************/
 // Just a quick demo with save/load through localStorage, 
 // next step is to explore if the Tiny Mce's functionality is enough for this app.
-
-
-
-
-
-/* 
-
-
 
 // note currently edited
 let activeId = false;
@@ -44,7 +36,7 @@ let activeId = false;
         imagetools_cors_hosts: ['picsum.photos'],
         menubar: 'file edit view insert format tools table help',
         toolbar: 'save | undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview print | insertfile image media template link anchor codesample | ltr rtl',
-        
+
         init_instance_callback: function (editor) {
             // editor events
             editor.on('Change', function (e) {
@@ -62,7 +54,3 @@ let activeId = false;
 
 
 })(); // local scope
-
-
-
-*/
