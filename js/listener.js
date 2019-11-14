@@ -1,4 +1,5 @@
 // DOCUMENT CLICK-LISTENER
+/*
 
 const blur = document.querySelector(".blur");
 const popup = document.querySelector(".popup");
@@ -41,3 +42,5 @@ document.addEventListener("click", function (e) {
     }
     console.log(e);
 });
+
+*/
