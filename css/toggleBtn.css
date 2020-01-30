@@ -1,0 +1,84 @@
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+
+.slider > i {
+  position: relative;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 6px;
+  top: 6px;
+  margin: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  /*box-shadow: 0 0px 15px #2020203d;*/
+  /*background: white url('https://i.ibb.co/FxzBYR9/night.png');*/
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input + .slider {
+  background-color: #102E46;
+
+}
+input:checked + .slider {
+  background-color: #123651;
+}
+
+input:checked + .slider i {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  /*background: white url('https://i.ibb.co/7JfqXxB/sunny.png');*/
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+i.fa-moon {
+  font-size: 20px;
+  top: 6px;
+  color: var(--settings-toggle-false);
+}
+
+i.fa-sun {
+         top: 4px;
+    left: 5px;
+    font-size: 25px;
+    color: var(--settings-toggle-true);
+}

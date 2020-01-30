@@ -1,32 +1,27 @@
 /*
-* LOCAL STORAGE 
-*****************/
+ * LOCAL STORAGE 
+ *****************/
 
-// Structure: [{}, ...{}]
 
-// Check if stored in L-storage
-const isStored = (key = 'myNotes') => localStorage.getItem(key) ? true : false;
-
-// Get from L-storage
-const getStored = (key = 'myNotes') => JSON.parse(localStorage.getItem(key));
-
-// Write to L-storage
-const store = (key = 'myNotes', value) => {
-    if (value == 'undefined' || value == null || value == '' || typeof value != 'object') {
-        console.log('Will not store data that is undefined, null nor an object/array.');
-        return;
-    }
-    // If first, create empty arr
-    if (!isStored(key)) {
-        localStorage.setItem('myNotes', JSON.stringify([]));
-    }
-    //
-    localStorage.setItem(key, JSON.stringify(value));
+/// SAVE NOTES TO LS
+const saveToLS = (key = 'noteList', val = app.noteList) => {
+    localStorage.setItem("noteList", JSON.stringify(val));
 }
 
-// Clear storage and empty editor (dev function)
-const clearStorage = () => {
-    localStorage.removeItem('myNotes');
-    displayMsg('All notes deleted!');
-    return '';
+
+/// LOAD NOTES FROM LS
+const loadFromLS = (key = 'noteList', type = 'note') => {
+    let res = JSON.parse(localStorage.getItem(key));
+
+    // notes
+    if (type === 'note') {
+        app.noteList = res;
+
+        if (app.noteList == null) {
+            app.noteList = [];
+        }
+        // autosave status
+    } else if (type === 'autosave') {
+        app.state.autoSave = res;
+    }
 }
