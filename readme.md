@@ -1,7 +1,12 @@
-# Quire notebook
-# [Quire](https://kiiim.se/quire) 
+# [Quire notebook](https://kiiim.se/quire) 
 ### first school team project
-### built in Dec 2019
+### built in Dec 2019 by
+##### Team Eraser at KYH Stockholm, FrontEnd 2019
+[Kim Nkoubou (butalsoverycool)](https://kiiim.se)
+[Marcel](https://github.com/MarcelR1998)
+[Joel](https://github.com/Joel-Adving)
+[Vidar](https://github.com/vidarsann)
+[Liesse]
 
 #
 
@@ -22,9 +27,9 @@ Quire is a straight forward online note-application. It's lightweight and it's e
 
 Quire by Eraser uses a number of open source projects to work properly:
 
-* [HTML] 
-* [CSS]
-* [JS]
+* HTML
+* CSS
+* JS
 * [QUILL API](https://quilljs.com/docs/api/)
 
 And of course Quire by Eraser itself is open source with a [public repo](https://github.com/MarcelR1998/fe19tp1_teamEraser)
